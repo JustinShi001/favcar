@@ -1,7 +1,7 @@
 'use strict'
 
 const authEvents = require('./auth/events')
-// const exampleEvents = require('./examples/events')
+const gameEvents = require('./game/events')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
@@ -9,5 +9,5 @@ const authEvents = require('./auth/events')
 // jQuery says I'm gonna wait til index.html is fully loaded, then run Javascript.
 $(() => {
   authEvents.addHandlers()
-//   exampleEvents.addHandlers()
+  gameEvents.addHandlers()
 })

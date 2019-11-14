@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>TicTac</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,10 +12,10 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Tic Tac Toe!</h1>
+      <h1>Tic Tac Toe! Have fun with the game!</h1>
       <div id="message"></div>
       <section class="before-auth">
-        <h2> Have fun with the game!</h2>
+        <h2>Sign Up </h2>
         <form id="sign-up">
           <input type="email" name="credentials[email]" placeholder="email">
           <input type="password" name="credentials[password]" placeholder="password">
@@ -49,11 +49,45 @@
         </section>
 
         <section class="after-auth">
-          <h2>Create A New Text Field</h2>
+          <h2>Let's Play</h2>
           <form id="create">
-            <input type="text" name="example[text]" placeholder="new text here">
-            <input type="submit" value="Create Example">
+            <!-- <input type="text" name="example[text]" placeholder="new text here"> -->
+            <input type="submit" value="Start">
           </form>
         </section>
+
+        <section class="after-auth">
+          <h2>Index</h2>
+          <form id="index">
+            <!-- <input type="text" name="example[text]" placeholder="new text here"> -->
+            <input type="submit" value="Index">
+          </form>
+        </section>
+
+        <section class="after-auth">
+          <h2>Show a game</h2>
+          <form id="show">
+            <!-- <input type="text" name="example[text]" placeholder="new text here"> -->
+            <input type="submit" value="show">
+          </form>
+        </section>
+
+        <section class="after-auth">
+          <!-- <div id="update" data-cell-index='0'>
+              <!-- <input type="text" name="example[text]" placeholder="new text here"> -->
+              <!-- <input type="submit" value="Grid0"> -->
+          <!-- </div> --> -->
+          <form id="update">
+            <!-- <input type="text" name="example[text]" placeholder="new text here"> -->
+            <input type="submit" value="Play First Move">
+          </form>
+        </section>
+        <!-- <section class="after-auth">
+          <h2>Let's Play</h2>
+          <form id="create">
+            <div id="1">click here</div>
+            <button class="btn btn-primary">Play Game</button>
+          </form>
+        </section> -->
     </body>
 </html>
