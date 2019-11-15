@@ -10,6 +10,15 @@ const onSuccess = message => {
   $('form').trigger('reset')
 }
 
+const onEnding = message => {
+  $('#message').removeClass('failure')
+  $('#message').addClass('success')
+  $('#message').text(message)
+  // can remove the the word 'message' and just connect the 3 dot commands in one line,
+  // or chaining.
+  $('button').remove()
+}
+
 const onFailure = message => {
   $('#message').removeClass('success')
   $('#message').addClass('failure')
@@ -18,12 +27,16 @@ const onFailure = message => {
 }
 
 const onCreateSuccess = (response) => {
-  store.game = response.game
   console.log('response from server is', response)
+  store.game = response.game
   onSuccess('You successfully started a game')
   $('.after-auth').show()
   $('.before-auth').hide()
-  console.log('store.game.cells is ', store.game.cells)
+  // $('.row').remove()
+  // $('.container').append('<div class="row"><div id = "divMove1" class="col-6 col-md-4 box alt-color"><button id="buttonMove1"></button></div><div id = "divMove2" class="col-6 col-md-4 box alt-color"><button id="buttonMove2"></button></div><div id = "divMove3" class="col-6 col-md-4 box alt-color"><button id="buttonMove3"></button></div></div></div>')
+  // $('.container').append('<div class="row"><div id = "divMove4" class="col-6 col-md-4 box alt-color"><button id="buttonMove4"></button></div><div id = "divMove5" class="col-6 col-md-4 box alt-color"><button id="buttonMove5"></button></div><div id = "divMove6" class="col-6 col-md-4 box alt-color"><button id="buttonMove6"></button></div></div></div>')
+  // $('.container').append('<div class="row"><div id = "divMove7" class="col-6 col-md-4 box alt-color"><button id="buttonMove7"></button></div><div id = "divMove8" class="col-6 col-md-4 box alt-color"><button id="buttonMove8"></button></div><div id = "divMove9" class="col-6 col-md-4 box alt-color"><button id="buttonMove9"></button></div></div></div>')
+  // // reattach click handlers
 }
 
 const onCreateFailure = (response) => {
@@ -63,7 +76,7 @@ const onUpdateSuccess = (response) => {
     (store.game.cells[0] === 'x' && store.game.cells[4] === 'x' && store.game.cells[8] === 'x') ||
     (store.game.cells[2] === 'x' && store.game.cells[4] === 'x' && store.game.cells[6] === 'x')
   ) {
-    onSuccess('Player_x wins!')
+    onEnding('Player_x wins!')
     console.log('Player_x wins!')
   } else if (
     (store.game.cells[0] === 'o' && store.game.cells[1] === 'o' && store.game.cells[2] === 'o') ||
@@ -75,8 +88,10 @@ const onUpdateSuccess = (response) => {
     (store.game.cells[0] === 'o' && store.game.cells[4] === 'o' && store.game.cells[8] === 'o') ||
     (store.game.cells[2] === 'o' && store.game.cells[4] === 'o' && store.game.cells[6] === 'o')
   ) {
-    onSuccess('Player_o wins!')
+    onEnding('Player_o wins!')
     console.log('Player_o wins!')
+  } else if (step === 9) {
+    onEnding('It is a draw!')
   } else if (step % 2 !== 0) {
     onSuccess('It is player_o turn!')
   } else { onSuccess('It is player_x turn!') }

@@ -14,7 +14,7 @@ const onCreate = event => {
   api.create()
     .then(ui.onCreateSuccess)
     .catch(ui.onCreateFailure)
-  console.log(ui.onCreateSuccess())
+  // console.log(ui.onCreateSuccess())
 }
 
 const onIndex = event => {
