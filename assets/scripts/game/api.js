@@ -46,7 +46,6 @@ const show = formData => {
 let step = 1
 
 const update = () => {
-  console.log('store.game.cells is ', store.game.cells)
   if (step % 2 !== 0) {
     step++
     return $.ajax({
@@ -67,7 +66,6 @@ const update = () => {
 }
 
 const update2 = () => {
-  console.log('store.game.cells is ', store.game.cells)
   if (step % 2 !== 0) {
     step++
     return $.ajax({
@@ -88,7 +86,6 @@ const update2 = () => {
 }
 
 const update3 = () => {
-  console.log('store.game.cells is ', store.game.cells)
   if (step % 2 !== 0) {
     step++
     return $.ajax({
@@ -109,7 +106,6 @@ const update3 = () => {
 }
 
 const update4 = () => {
-  console.log('store.game.cells is ', store.game.cells)
   if (step % 2 !== 0) {
     step++
     return $.ajax({
@@ -130,7 +126,6 @@ const update4 = () => {
 }
 
 const update5 = () => {
-  console.log('store.game.cells is ', store.game.cells)
   if (step % 2 !== 0) {
     step++
     return $.ajax({
@@ -150,18 +145,8 @@ const update5 = () => {
   }
 }
 const update6 = () => {
-  console.log('store.game.cells is ', store.game.cells)
-  const result = function () {
-    if (store.game.cells[0] === 'x' && store.game.cells[1] === 'x' && store.game.cells[2] === 'x') {
-      console.log('player1 wins!')
-    } else if (store.game.cells[0] === 'o' && store.game.cells[1] === 'o' && store.game.cells[2] === 'o') {
-      console.log('player2 wins!')
-    }
-  }
-  console.log(result())
   if (step % 2 !== 0) {
     step++
-
     return $.ajax({
       url: config.apiUrl + '/games' + '/' + store.game.id,
       method: 'PATCH',
@@ -179,16 +164,6 @@ const update6 = () => {
   }
 }
 const update7 = () => {
-  console.log('store.game.cells is ', store.game.cells)
-
-  const result = function () {
-    if (store.game.cells[0] === 'x' && store.game.cells[1] === 'x' && store.game.cells[2] === 'x') {
-      console.log('player1 wins!')
-    } else if (store.game.cells[0] === 'o' && store.game.cells[1] === 'o' && store.game.cells[2] === 'o') {
-      console.log('player2 wins!')
-    }
-  }
-  console.log(result())
   if (step % 2 !== 0) {
     step++
     return $.ajax({
@@ -208,7 +183,6 @@ const update7 = () => {
   }
 }
 const update8 = () => {
-  console.log('store.game.cells is ', store.game.cells)
   if (step % 2 !== 0) {
     step++
     return $.ajax({
@@ -228,7 +202,6 @@ const update8 = () => {
   }
 }
 const update9 = () => {
-  console.log('store.game.cells is ', store.game.cells)
   if (step % 2 !== 0) {
     step++
     return $.ajax({
