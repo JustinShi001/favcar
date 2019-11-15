@@ -32,7 +32,7 @@ const onCreateSuccess = (response) => {
   onSuccess('You successfully started a game')
   $('.after-auth').show()
   $('.before-auth').hide()
-  // $('.row').remove()
+  // $('p').remove()
   // $('.container').append('<div class="row"><div id = "divMove1" class="col-6 col-md-4 box alt-color"><button id="buttonMove1"></button></div><div id = "divMove2" class="col-6 col-md-4 box alt-color"><button id="buttonMove2"></button></div><div id = "divMove3" class="col-6 col-md-4 box alt-color"><button id="buttonMove3"></button></div></div></div>')
   // $('.container').append('<div class="row"><div id = "divMove4" class="col-6 col-md-4 box alt-color"><button id="buttonMove4"></button></div><div id = "divMove5" class="col-6 col-md-4 box alt-color"><button id="buttonMove5"></button></div><div id = "divMove6" class="col-6 col-md-4 box alt-color"><button id="buttonMove6"></button></div></div></div>')
   // $('.container').append('<div class="row"><div id = "divMove7" class="col-6 col-md-4 box alt-color"><button id="buttonMove7"></button></div><div id = "divMove8" class="col-6 col-md-4 box alt-color"><button id="buttonMove8"></button></div><div id = "divMove9" class="col-6 col-md-4 box alt-color"><button id="buttonMove9"></button></div></div></div>')

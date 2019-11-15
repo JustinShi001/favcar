@@ -39,11 +39,10 @@ api.js: created 1 function for each button with corresponding game.cells array i
 UI.js: added game logic into the onSuccess function.
         note: I attempted to to keep the game logic in a separate file, but was not successful,
         since I'm not very familiar with require function.
-
+ui.js: blocked the rest of the game board after a player wins by deleting any remaining buttons on the board.
+        - done by using $('button').remove()
 Remaining issues:
-    - block the rest of the game board after a player wins
-      - by deleting any remaining buttons on the board.
-      - done
     - reset entire board after clicking "play game" again.
       - this is the last challenging piece I have. Consider using $('.class').text() to clear out the Board
       - or reload the buttons. reloading the whole board will require re-attaching all event handlers again
+    - hide or show apropriate tags using <class>.hide or .show.
