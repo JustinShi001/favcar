@@ -23,7 +23,7 @@ const onCreateSuccess = (response) => {
   onSuccess('You successfully started a game')
   $('.after-auth').show()
   $('.before-auth').hide()
-  console.log('store.game.cells is ', store.game.cells)
+  console.log('store.game is ', store.game)
 }
 
 const onCreateFailure = (response) => {
@@ -41,7 +41,6 @@ const onIndexFailure = (response) => {
 }
 
 const onShowSuccess = (response) => {
-  store.game = response.game
   console.log('response from server is', response)
   onSuccess('You successfully displayed a game')
 }
@@ -51,9 +50,8 @@ const onShowFailure = (response) => {
 }
 
 const onUpdateSuccess = (response) => {
-  store.game = response.game
   console.log('response from server is', response)
-  onSuccess('You successfully played a move')
+  onSuccess('You successfully updated a game')
 }
 const onUpdateFailure = (response) => {
   console.log('response from server is', response)

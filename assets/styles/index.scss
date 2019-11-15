@@ -1,1 +1,48 @@
 @import '~bootstrap/scss/bootstrap';
+
+// $black: #000;
+//
+// .border {
+//   border: 3px solid $black;
+//   margin: 20px;
+//   padding: 20px;
+// }
+//
+// .success {
+//   background-color: green;
+//   color: white;
+//   font-size: 2em;
+// }
+//
+// .failure {
+//   background-color: red;
+//   color: white;
+//   font-size: 2em;
+// }
+//
+// .after-auth {
+//   display: none;
+// }
+
+
+$alt-color: $cyan;
+$body-bg-color: $gray-200;
+$font-color: $light;
+
+body {
+  background-color: $body-bg-color;
+}
+
+.box {
+  align-items: center;
+  background-color: $secondary;
+  border: 1px solid $white;
+  color: $font-color;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+}
+
+.alt-color {
+  background-color: $alt-color;
+}
