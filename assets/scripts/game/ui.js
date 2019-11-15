@@ -1,5 +1,7 @@
 'use strict'
 const store = require('../store')
+const app = require('../app')
+let counter = 0
 
 const onSuccess = message => {
   $('#message').removeClass('failure')
@@ -16,7 +18,8 @@ const onEnding = message => {
   $('#message').text(message)
   // can remove the the word 'message' and just connect the 3 dot commands in one line,
   // or chaining.
-  $('button').remove()
+  // $('button').remove()
+  counter = 0
 }
 
 const onFailure = message => {
@@ -32,7 +35,9 @@ const onCreateSuccess = (response) => {
   onSuccess('You successfully started a game')
   $('.after-auth').show()
   $('.before-auth').hide()
-  // $('p').remove()
+  $('p').remove()
+  app.step = 0 // this is not working. how to reset the step variable in the app.js file?
+  // console.log('app.step =' app.step)
   // $('.container').append('<div class="row"><div id = "divMove1" class="col-6 col-md-4 box alt-color"><button id="buttonMove1"></button></div><div id = "divMove2" class="col-6 col-md-4 box alt-color"><button id="buttonMove2"></button></div><div id = "divMove3" class="col-6 col-md-4 box alt-color"><button id="buttonMove3"></button></div></div></div>')
   // $('.container').append('<div class="row"><div id = "divMove4" class="col-6 col-md-4 box alt-color"><button id="buttonMove4"></button></div><div id = "divMove5" class="col-6 col-md-4 box alt-color"><button id="buttonMove5"></button></div><div id = "divMove6" class="col-6 col-md-4 box alt-color"><button id="buttonMove6"></button></div></div></div>')
   // $('.container').append('<div class="row"><div id = "divMove7" class="col-6 col-md-4 box alt-color"><button id="buttonMove7"></button></div><div id = "divMove8" class="col-6 col-md-4 box alt-color"><button id="buttonMove8"></button></div><div id = "divMove9" class="col-6 col-md-4 box alt-color"><button id="buttonMove9"></button></div></div></div>')
@@ -62,10 +67,9 @@ const onShowFailure = (response) => {
   console.log('response from server is', response)
   onFailure('Rut roh... somgthing went wrong! try again')
 }
-let step = 0
 const onUpdateSuccess = (response) => {
   store.game = response.game
-  step++
+  counter++
   if (
     (store.game.cells[0] === 'x' && store.game.cells[1] === 'x' && store.game.cells[2] === 'x') ||
     (store.game.cells[3] === 'x' && store.game.cells[4] === 'x' && store.game.cells[5] === 'x') ||
@@ -90,9 +94,9 @@ const onUpdateSuccess = (response) => {
   ) {
     onEnding('Player_o wins!')
     console.log('Player_o wins!')
-  } else if (step === 9) {
+  } else if (counter === 9) {
     onEnding('It is a draw!')
-  } else if (step % 2 !== 0) {
+  } else if (counter % 2 !== 0) {
     onSuccess('It is player_o turn!')
   } else { onSuccess('It is player_x turn!') }
 }

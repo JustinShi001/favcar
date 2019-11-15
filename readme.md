@@ -45,4 +45,5 @@ Remaining issues:
     - reset entire board after clicking "play game" again.
       - this is the last challenging piece I have. Consider using $('.class').text() to clear out the Board
       - or reload the buttons. reloading the whole board will require re-attaching all event handlers again
+      - This is mostly fixed by deleting the button completely, however I need to figure out how to reset the step variable in the app.js   file after I press the start game button again. Otherwise it sometimes starts with player_o.
     - hide or show apropriate tags using <class>.hide or .show.
