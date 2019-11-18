@@ -26,15 +26,13 @@ const onEnding = message => {
   counter = 0
 }
 
-// const onInvalid = message => {
-//   $('#message').removeClass('success')
-//   $('#message').addClass('failure')
-//   $('#message').text(message)
-// }
-//
-// const onInvalidSpace = () => {
-//   onInvalid('Invalid Cell. Please click an empty cell.')
-// }
+const onInvalid = message => {
+  $('#message').text(message)
+}
+
+const onInvalidSpace = () => {
+  onInvalid('Invalid Cell. Please click an empty cell.')
+}
 
 const onFailure = message => {
   $('#message').removeClass('success')
@@ -52,8 +50,8 @@ const onCreateSuccess = (response) => {
   console.log('this is the value of store.step', store.step)
   console.log(store.game.over)
   onSuccess('You successfully started a game')
-  $('.after-auth').show()
-  $('.before-auth').hide()
+  $('.container').show()
+  // $('.before-auth').hide()
   $('p').remove()
   // app.step = 0 // this is not working. how to reset the step variable in the app.js file?
   // console.log('app.step =' app.step)
@@ -131,6 +129,6 @@ module.exports = {
   onShowSuccess,
   onShowFailure,
   onUpdateSuccess,
-  onUpdateFailure
-  // onInvalidSpace
+  onUpdateFailure,
+  onInvalidSpace
 }

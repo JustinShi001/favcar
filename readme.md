@@ -1,3 +1,25 @@
+
+
+day3-5pm:
+
+The following is working now:
+-Display an error message when user clicked on an occupied cell.
+- show or hide certain elements (using .class {display: none} in css)
+- find the bug - bug was solved by rerunning "grunt serve"
+
+Todos:
+
+- update game.over to true at end of game.
+- make the display a game button work.
+
+day3-3pm:
+Solved most remaining issues, including:
+
+- restart a new game and reset which player's turn it is (global variable)
+- blocked cells after game has ended;
+- Make cells unclickable after it has been occupied (by using jquery)
+  $('event.target').html()
+
 Explain the project here.
 
 
