@@ -43,7 +43,8 @@ const onUpdate = event => {
   console.log('onUpdate')
   console.log('the value of store.gameover is:', store.gameover)
 
-  if ($(event.target).html() === '<p>x</p>' || $(event.target).html() === '<p>o</p>') {
+  if ($(event.target).html() === '<p>x</p>' || $(event.target).html() === '<p>o</p>' ||
+      $(event.target).html() === 'x' || $(event.target).html() === 'o') {
     console.log('Invalid cell. click another cell')
     ui.onInvalidSpace()
   } else if (store.gameover === false) {
