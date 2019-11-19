@@ -29,6 +29,8 @@ const onSigninSuccess = responseData => {
   onSuccess('You successfully sign in!')
   $('.after-auth').show()
   $('.before-auth').hide()
+  $('#gameMessage').text('')
+  $('#gameMessage').show()
 }
 const onSigninFailure = () => {
   onFailure('Rut roh... somgthing went wrong! try again')
@@ -47,6 +49,8 @@ const onSignoutSuccess = responseData => {
   onSuccess('You successfully signed out!')
   $('.after-auth').hide()
   $('.before-auth').show()
+  $('.container').hide()
+  $('#gameMessage').hide()
 }
 const onSignoutFailure = () => {
   onFailure('Sign out failed')

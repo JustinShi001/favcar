@@ -56,6 +56,17 @@ const update = (index, player) => {
   })
 }
 
+const updateGameStatus = () => {
+  // if (step % 2 !== 0) {
+  //   step++
+  return $.ajax({
+    url: config.apiUrl + '/games' + '/' + store.game.id,
+    method: 'PATCH',
+    headers: {Authorization: `Token token=${store.user.token}`},
+    data: {'game': {'over': true}}
+  })
+}
+
 // const update2 = () => {
 //   if (step % 2 !== 0) {
 //     step++
@@ -80,5 +91,6 @@ module.exports = {
   create,
   index,
   show,
-  update
+  update,
+  updateGameStatus
 }

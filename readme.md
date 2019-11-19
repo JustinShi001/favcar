@@ -1,11 +1,33 @@
 
+day4-12pm:
+
+Made the following updates:
+- Improved styling (css)
+- Able to show total # of game a user has played (using store.games.length)
+- Updated game.over status to true when a game has ended (made a new
+  function called api.updateGameStatus)
+
 
 day3-5pm:
 
 The following is working now:
--Display an error message when user clicked on an occupied cell.
+- Display an error message when user clicked on an occupied cell.
 - show or hide certain elements (using .class {display: none} in css)
 - find the bug - bug was solved by rerunning "grunt serve"
+- logic of how problems were solved:
+  - first made the basic game board to work (user doesn't click on an occupied cell
+    or an empty cell after game ends)
+  - sequence of actions:
+      - User start a game
+      - New game object created through API
+      - User clicks a cell
+      - jQuery updates that cell in DOM, and AJAX updates the corresponding array in API
+      - Game Logic checks if the game has ended
+      - UI display proper message
+  - Then started to tackle each anomaly cases:
+      - when game has ended: disable the jQuery using store.gameover === false
+      - when an occupied cell is clicked: disable
+        the jQuery using event.target.html() = <p>'x'</p> or o
 
 Todos:
 
@@ -19,6 +41,9 @@ Solved most remaining issues, including:
 - blocked cells after game has ended;
 - Make cells unclickable after it has been occupied (by using jquery)
   $('event.target').html()
+- Simplied the code in app.js, events.js, and api.js using event.target,
+  square-data property, and passing the index (square-data) info and
+  player (x or o) info into the api.update function
 
 Explain the project here.
 

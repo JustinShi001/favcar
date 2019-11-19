@@ -27,6 +27,16 @@
   display: none;
 }
 
+.center {
+  margin: center;
+  background-color: green;
+  color: white;
+  font-size: 2em;
+}
+
+p {
+  font-size: 4em;
+}
 
 $alt-color: $cyan;
 $body-bg-color: $gray-200;
@@ -34,6 +44,8 @@ $font-color: $light;
 
 body {
   background-color: $body-bg-color;
+  // background-image: url('https://imgur.com/N9OHXB5');
+  margin: auto;
 }
 
 .box {

@@ -1,49 +1,53 @@
 'use strict'
 const store = require('../store')
+const api = require('./api')
 // const app = require('../app')
 let counter = 0
+// let gamesPlayed = 0
 // store.gameover = false // this is how you set up a global variable. use "store.step" to call it in any file.
 
-const onSuccess = message => {
-  $('#message').removeClass('failure')
-  $('#message').addClass('success')
-  $('#message').text(message)
-  // can remove the the word 'message' and just connect the 3 dot commands in one line,
+const onSuccess = (gameMessage) => {
+  $('#gameMessage').removeClass('failure')
+  $('#gameMessage').addClass('success')
+  $('#gameMessage').text(gameMessage)
+  // can remove the the word 'gameMessage' and just connect the 3 dot commands in one line,
   // or chaining.
   $('form').trigger('reset')
 }
 
-const onEnding = message => {
-  $('#message').removeClass('failure')
-  $('#message').addClass('success')
-  $('#message').text(message)
+const onEnding = gameMessage => {
+  $('#gameMessage').removeClass('failure')
+  $('#gameMessage').addClass('success')
+  $('#gameMessage').text(gameMessage)
   store.game.over = true
   store.gameover = true
   console.log('the value of store.game.over is:', store.game.over)
-  // can remove the the word 'message' and just connect the 3 dot commands in one line,
+  // can remove the the word 'gameMessage' and just connect the 3 dot commands in one line,
   // or chaining.
   // $('button').remove()
   counter = 0
+  api.updateGameStatus()
 }
 
-const onInvalid = message => {
-  $('#message').text(message)
+const onInvalid = gameMessage => {
+  $('#gameMessage').text(gameMessage)
 }
 
 const onInvalidSpace = () => {
   onInvalid('Invalid Cell. Please click an empty cell.')
 }
 
-const onFailure = message => {
-  $('#message').removeClass('success')
-  $('#message').addClass('failure')
-  $('#message').text(message)
+const onFailure = gameMessage => {
+  $('#gameMessage').removeClass('success')
+  $('#gameMessage').addClass('failure')
+  $('#gameMessage').text(gameMessage)
   $('form').trigger('reset')
 }
 
 const onCreateSuccess = (response) => {
   console.log('response from server is', response)
   store.game = response.game
+  // console.log('length is', response.games.length)
   store.gameover = false
   store.step = 0
   // store.game.over = true
@@ -76,9 +80,10 @@ const onIndexFailure = (response) => {
 }
 
 const onShowSuccess = (response) => {
-  store.game = response.game
+  store.games = response.games
   console.log('response from server is', response)
-  onSuccess('You successfully displayed a game')
+  onSuccess(store.games.length)
+  console.log(store.games.length)
 }
 const onShowFailure = (response) => {
   console.log('response from server is', response)
@@ -86,6 +91,7 @@ const onShowFailure = (response) => {
 }
 const onUpdateSuccess = (response) => {
   store.game = response.game
+  console.log('response.length is ', response.length)
   counter++
   if (
     (store.game.cells[0] === 'x' && store.game.cells[1] === 'x' && store.game.cells[2] === 'x') ||

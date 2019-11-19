@@ -11,8 +11,8 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Tic Tac Toe! Have fun with the game!</h1>
+    <body><center>
+      <h1>Let's Tic Tac Toe!</h1>
       <div id="message"></div>
       <section class="before-auth">
         <h2>Sign Up </h2>
@@ -52,30 +52,31 @@
           <h2>Let's Play</h2>
           <form id="create">
             <!-- <input type="text" name="example[text]" placeholder="new text here"> -->
-            <input type="submit" value="Start">
+            <button class="btn btn-primary">PLAY</button>
           </form>
         </section>
 
-        <section class="after-auth">
+        <!-- <section class="after-auth">
           <h2>Index</h2>
           <form id="index">
-            <!-- <input type="text" name="example[text]" placeholder="new text here"> -->
             <input type="submit" value="Index">
           </form>
-        </section>
+        </section> -->
 
         <section class="after-auth">
-          <h2>Show a game</h2>
+          <h2>Games Played</h2>
           <form id="show">
             <!-- <input type="text" name="example[text]" placeholder="new text here"> -->
-            <input type="submit" value="show">
+            <button class="btn btn-primary">SHOW</button>
           </form>
         </section>
+      </center>
 
       <!-- <section class="after-auth"> -->
       <section>
+        <center><div class = "center" id = "gameMessage"> </div></center>
         <div class="container">
-          <h1>Game Board</h1>
+          <!-- <h1>Game Board</h1> -->
           <!-- Columns start at 50% wide on mobile and bump up to 33.3% 6wide on desktop -->
           <div class="row">
             <div id = "divMove" data-square = '0' class="col-6 col-md-4 box alt-color"></div>
