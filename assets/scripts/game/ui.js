@@ -13,6 +13,7 @@ const onSuccess = (gameMessage) => {
   // can remove the the word 'gameMessage' and just connect the 3 dot commands in one line,
   // or chaining.
   $('form').trigger('reset')
+  counter = 0
 }
 
 const onEnding = gameMessage => {
