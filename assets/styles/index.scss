@@ -20,6 +20,7 @@
 //   font-size: 2em;
 // }
 //
+
 .after-auth {
   display: none;
 }
@@ -46,6 +47,7 @@ body {
   background-color: $body-bg-color;
   // background-image: url('https://imgur.com/N9OHXB5');
   margin: auto;
+  // max-width: 50;
 }
 
 .box {
@@ -60,4 +62,10 @@ body {
 
 .alt-color {
   background-color: $alt-color;
+}
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 300px
+  }
 }

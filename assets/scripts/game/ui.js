@@ -13,7 +13,7 @@ const onSuccess = (gameMessage) => {
   // can remove the the word 'gameMessage' and just connect the 3 dot commands in one line,
   // or chaining.
   $('form').trigger('reset')
-  $('#create').hide()
+  // $('#create').hide()
   // counter = 0
 }
 
@@ -29,7 +29,7 @@ const onEnding = gameMessage => {
   // $('button').remove()
   counter = 0
   api.updateGameStatus()
-  $('#create').show()
+  // $('#create').show()
 }
 
 const onInvalid = gameMessage => {
@@ -53,6 +53,7 @@ const onCreateSuccess = (response) => {
   // console.log('length is', response.games.length)
   store.gameover = false
   store.step = 0
+  counter = 0
   // store.game.over = true
   console.log('this is the value of store.step', store.step)
   console.log(store.game.over)
