@@ -45,7 +45,7 @@ $font-color: $light;
 
 body {
   background-color: $body-bg-color;
-  // background-image: url('https://imgur.com/N9OHXB5');
+  // background-image: url(https://imgur.com/N9OHXB5);
   margin: auto;
   // max-width: 50;
 }
@@ -58,6 +58,7 @@ body {
   display: flex;
   height: 80px;
   justify-content: center;
+  // background-image: url(https://www.disneytouristblog.com/wp-content/uploads/2012/01/DSC_4287-copy-1024x744.jpg);
 }
 
 .alt-color {
@@ -69,3 +70,19 @@ body {
     max-width: 300px
   }
 }
+
+.board {
+  margin: 0px auto;
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
+  // background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8XVsF6O0OX80DaZpUsaihFmbhhyOXhF23haZJhqihboZO2Iff&s);
+  // background-size: fit;
+}
+
+// Presentation notes:
+// Michhael: third party user messaging: sweet alert
+// .then(res => ui.onCreateSuccess(res))
+// Simon: cycle throughh all game objects instead of game.array.length to display win/loss stats
+// Ben: showPageById to transition through different pages.
+// Tips: planning planning planning;
+// styling for atom
