@@ -52,13 +52,12 @@ body {
 
 .box {
   align-items: center;
-  background-color: $secondary;
+  // background-color: $secondary;
   border: 1px solid $white;
   color: $font-color;
   display: flex;
   height: 80px;
   justify-content: center;
-  // background-image: url(https://www.disneytouristblog.com/wp-content/uploads/2012/01/DSC_4287-copy-1024x744.jpg);
 }
 
 .alt-color {
@@ -75,6 +74,7 @@ body {
   margin: 0px auto;
   max-height: calc(100vh - 75px);
   max-width: calc(100vh - 75px);
+  background-image: url(https://www.disneytouristblog.com/wp-content/uploads/2012/01/DSC_4287-copy-1024x744.jpg);
   // background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8XVsF6O0OX80DaZpUsaihFmbhhyOXhF23haZJhqihboZO2Iff&s);
   // background-size: fit;
 }

@@ -1,6 +1,7 @@
 'use strict'
 const store = require('../store')
 const api = require('./api')
+const gameLogic = require('../logic')
 let counter = 0
 
 const onSuccess = (gameMessage) => {
@@ -43,6 +44,7 @@ const onCreateSuccess = (response) => {
   onSuccess('You successfully started a game')
   $('.container').show()
   $('p').remove()
+  $('.box').addClass('alt-color')
 }
 
 const onCreateFailure = (response) => {
@@ -63,18 +65,12 @@ const onShowSuccess = (response) => {
 const onShowFailure = (response) => {
   onFailure('Rut roh... somgthing went wrong! try again')
 }
-const onUpdateSuccess = (response) => {
+const onUpdateSuccess = (response, box) => {
   store.game = response.game
+  box.removeClass('alt-color')
   counter++
   if (
-    (store.game.cells[0] === 'x' && store.game.cells[1] === 'x' && store.game.cells[2] === 'x') ||
-    (store.game.cells[3] === 'x' && store.game.cells[4] === 'x' && store.game.cells[5] === 'x') ||
-    (store.game.cells[6] === 'x' && store.game.cells[7] === 'x' && store.game.cells[8] === 'x') ||
-    (store.game.cells[0] === 'x' && store.game.cells[3] === 'x' && store.game.cells[6] === 'x') ||
-    (store.game.cells[1] === 'x' && store.game.cells[4] === 'x' && store.game.cells[7] === 'x') ||
-    (store.game.cells[2] === 'x' && store.game.cells[5] === 'x' && store.game.cells[8] === 'x') ||
-    (store.game.cells[0] === 'x' && store.game.cells[4] === 'x' && store.game.cells[8] === 'x') ||
-    (store.game.cells[2] === 'x' && store.game.cells[4] === 'x' && store.game.cells[6] === 'x')
+    gameLogic.winX()
   ) {
     onEnding('Player_x wins!')
   } else if (

@@ -40,7 +40,7 @@ const onUpdate = event => {
       player = 'x'
       const index = $(event.target).data('square')
       api.update(index, player)
-        .then(ui.onUpdateSuccess)
+        .then(response => ui.onUpdateSuccess(response, $(event.target)))
         .catch(ui.onUpdateFailure)
     } else {
       $(event.target).append('<p>o</p>')
@@ -48,7 +48,7 @@ const onUpdate = event => {
       player = 'o'
       const index = $(event.target).data('square')
       api.update(index, player)
-        .then(ui.onUpdateSuccess)
+        .then(response => ui.onUpdateSuccess(response, $(event.target)))
         .catch(ui.onUpdateFailure)
     }
   }

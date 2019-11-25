@@ -98,3 +98,7 @@ For the game board on html:
 
 - JS work:
   - write the logic with given array - done
+
+
+  ### link to others project
+https://docs.google.com/spreadsheets/d/1uuKnFX4m1G33u6CDe7Nsbp4eJYLauX_YurOm21rv2jc/edit#gid=242157036
